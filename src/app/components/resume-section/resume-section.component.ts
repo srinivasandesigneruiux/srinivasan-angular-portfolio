@@ -15,7 +15,7 @@ import {
 } from '../../data/portfolio-data';
 
 import { CommonModule } from '@angular/common';
-
+import { ScrollRevealDirective } from '../../shared/scroll-reveal.directive';
 interface ContactFact {
   icon: string;
   label: string;
@@ -34,7 +34,8 @@ interface SkillIcon {
   standalone: true,
 
   imports: [
-    CommonModule
+    CommonModule, 
+     ScrollRevealDirective,
   ],
 
   templateUrl: './resume-section.component.html',

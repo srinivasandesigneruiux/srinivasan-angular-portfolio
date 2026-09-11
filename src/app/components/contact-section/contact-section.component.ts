@@ -2,13 +2,13 @@ import { Component, signal, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
-
+import { ScrollRevealDirective } from '../../shared/scroll-reveal.directive';
 type SendState = 'idle' | 'sending' | 'success' | 'error';
 
 @Component({
   selector: 'app-contact-section',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, ScrollRevealDirective],
   templateUrl: './contact-section.component.html',
   styleUrl: './contact-section.component.css',
 })

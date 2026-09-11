@@ -3,7 +3,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProjectDetailComponent } from './pages/project-detail/project-detail.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'portfolio/:id', component: ProjectDetailComponent },
+  { path: '', component: HomeComponent, data: { animation: 'HomePage' } },
+  { path: 'portfolio/:id', component: ProjectDetailComponent, data: { animation: 'ProjectDetailPage' } },
   { path: '**', redirectTo: '' },
 ];

@@ -142,7 +142,9 @@ hr {
     text-align: center;
     height: 100vh;
 }
-
+.name-contant{
+  text-align: left;
+}
 
 /* =========================
    MOBILE VIEW
@@ -153,6 +155,10 @@ hr {
         background-size: auto 100% !important;
         background-attachment: scroll !important;
     }
+    .name-contant{
+  text-align: center;
+}
+
     .templatemo-home::before {
         content: "";
         position: absolute;
@@ -1551,4 +1557,33 @@ body * {
 
     bottom: -35px;
     left: 17%;
+}
+
+
+
+.reveal {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal-fade-up { transform: translateY(40px); }
+.reveal-fade-in { transform: none; }
+.reveal-fade-left { transform: translateX(-40px); }
+.reveal-fade-right { transform: translateX(40px); }
+
+.reveal-active {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.reveal-fade-left {
+  transform: translateX(-100px);
+}
+
+.reveal-fade-right {
+  transform: translateX(40px);
 }

@@ -7,7 +7,7 @@ import { ResumeSectionComponent } from '../../components/resume-section/resume-s
 import { AboutSectionComponent } from '../../components/about-section/about-section.component';
 import { SocialSectionComponent } from '../../components/social-section/social-section.component';
 import { ContactSectionComponent } from '../../components/contact-section/contact-section.component';
-
+import { ScrollRevealDirective } from '../../shared/scroll-reveal.directive';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -20,6 +20,7 @@ import { ContactSectionComponent } from '../../components/contact-section/contac
     AboutSectionComponent,
     SocialSectionComponent,
     ContactSectionComponent,
+    ScrollRevealDirective
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
