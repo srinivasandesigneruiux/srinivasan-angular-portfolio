@@ -9,10 +9,23 @@ https://templatemo.com/tm-464-ultra-profile
 body {
   background:  #000;
   /* font-family: 'Raleway', sans-serif; */
-  font-family: "Phudu", sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   font-size: 16px;
   color: #D0C9BD;
   position: relative;
+}
+
+p {
+font-family: "Open Sans", Arial, sans-serif !important;
+}
+h1,
+h2,
+h3,
+h4,
+.tm-home-title,
+.tm-portfolio-title,
+.heading {
+  font-family: "Phudu", sans-serif;
 }
 html, body {
   width: 100%;
@@ -29,7 +42,7 @@ hr {
   color: #D0C9BD;
   font-size: 75px;
   /* padding-bottom: 40px; */
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 /* START NAVIGATION */
@@ -91,7 +104,7 @@ hr {
 /* END NAVIGATION */
 
 /* START HOME */
-.templatemo-home {
+/* .templatemo-home {
   background: url('assets/images/welcome-banner-5.jpg');
   background-size: cover;
   background-attachment: fixed;
@@ -107,6 +120,53 @@ hr {
           align-items: center;
   text-align: center;  
   height: 100vh;
+} */
+ .templatemo-home {
+    background: url('assets/images/welcome-banner-5.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    color: #5f5f5f;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    text-align: center;
+    height: 100vh;
+}
+
+
+/* =========================
+   MOBILE VIEW
+   ========================= */
+@media (max-width: 768px) {
+    .templatemo-home {
+        background-position: 80% center !important;
+        background-size: auto 100% !important;
+        background-attachment: scroll !important;
+    }
+    .templatemo-home::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgb(0 0 0 / 56%);
+        z-index: 0;
+    }
+
+    /* Keep content above overlay */
+    .templatemo-home .container {
+        position: relative;
+        z-index: 1;
+    }
+
 }
 .text-left{
   display: flex;
@@ -162,7 +222,7 @@ hr {
 }
 .tm-home-title,
  .tm-home-subtitle {
-  text-transform: uppercase;
+  text-transform: none;
  }
 .tm-home-title { font-size: 60px; }
 .tm-home-subtitle {
@@ -290,14 +350,14 @@ hr {
 .tm-portfolio-title {
   color: #f5f2eb;
   padding: 20px 30px;
-  text-transform: uppercase;
+  text-transform: none;
   font-size: 75px;
  
 }
 .portfolio-item-title {
   font-weight: bold;
   margin-top: 10px;
-  text-transform: uppercase;
+  text-transform: none;
   color: #2c2721;
 }
 .portfolio-thumb {
@@ -438,7 +498,7 @@ hr {
   font-size: 12px;
   font-weight: bold;
   padding-top: 10px;
-  text-transform: uppercase;
+  text-transform: none;
 }
 .progress-percent-small {
   display: block;
@@ -456,11 +516,48 @@ hr {
   padding-top: 60px;
   padding-bottom: 100px;
 }
+@media (max-width: 768px) {
+
+    .tm-about {
+        position: relative;
+
+        background-position: 14% center !important;
+        background-size: auto 100%;
+        background-attachment: scroll;
+
+        padding-top: 60px;
+        padding-bottom: 80px;
+    }
+
+    /* Dark overlay */
+    .tm-about::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.65);
+        z-index: 0;
+    }
+
+    /* Keep About content above overlay */
+    .tm-about .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Improve text readability */
+    .tm-about h1,
+    .tm-about h2,
+    .tm-about h3,
+    .tm-about h4,
+    .tm-about p {
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+    }
+}
 /* END ABOUT */
 
 /* START SOCIAL */
 .tm-social {
-  text-transform: uppercase;
+  text-transform: none;
 }
 .tm-social .container {
   width: 100%;
@@ -644,7 +741,7 @@ a:focus {
   margin: 40px 0;
   color: #03e9f4;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: none;
   transition: 0.5s;
   letter-spacing: 4px;
   overflow: hidden;
@@ -802,7 +899,7 @@ hr{
 .skill-title{
   
     text-align: left;
-    text-transform: uppercase;
+    text-transform: none;
     color: #695f51;
 }
 .form-control {
@@ -969,7 +1066,7 @@ hr{
 }
 .card-title h2{
   font-size:18px;
-  text-transform:uppercase;
+  text-transform:none;
   letter-spacing:-.5px;
 }
 .card-title h2 span{font-weight:400;color:#726c65}
@@ -1438,4 +1535,20 @@ hr{
 
 .second-word{
   color: #9a32ff !important;
+}
+input,
+textarea {
+    text-transform: none !important;
+}
+body,
+body * {
+    text-transform: none !important;
+}
+
+
+.errormessage{
+      position: absolute;
+
+    bottom: -35px;
+    left: 17%;
 }

@@ -8,77 +8,56 @@
       <div class="col-md-1 col-sm-1"></div>
       <div class="col-md-10 col-sm-10 f-bg">
 
-  <form [formGroup]="form" (ngSubmit)="submit()">
+        <form [formGroup]="form" (ngSubmit)="submit()">
 
-    <div class="col-md-6 col-sm-6">
-      <input
-        class="form-control"
-        type="text"
-        formControlName="name"
-        placeholder="Your Name"
-      />
-    </div>
+          <div class="col-md-6 col-sm-6">
+            <input class="form-control" type="text" formControlName="name" placeholder="Your Name" />
+          </div>
 
-    <div class="col-md-6 col-sm-6">
-      <input
-        class="form-control"
-        type="email"
-        formControlName="email"
-        placeholder="Your Email"
-      />
-    </div>
+          <div class="col-md-6 col-sm-6">
+            <input class="form-control" type="email" formControlName="email" placeholder="Your Email" />
+          </div>
 
-    <div class="col-md-12 col-sm-12">
+          <div class="col-md-12 col-sm-12">
+            <input class="form-control" type="text" formControlName="subject" placeholder="Your Subject" />
+            <textarea class="form-control" formControlName="message" placeholder="Your Message" rows="6"></textarea>
+          </div>
 
-      <input
-        class="form-control"
-        type="text"
-        formControlName="subject"
-        placeholder="Your Subject"
-      />
+          <div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
+            <input
+              class="form-control"
+              type="submit"
+              [value]="sendState() === 'sending' ? 'SENDING...' : 'SHOOT MESSAGE'"
+              [disabled]="sendState() === 'sending'"
+            />
+          </div>
 
-      <textarea
-        class="form-control"
-        formControlName="message"
-        placeholder="Your Message"
-        rows="6"
-      ></textarea>
+        </form>
 
-    </div>
-
-    <div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
-
-      <input
-        class="form-control"
-        type="submit"
-        [value]="sendState() === 'sending'
-          ? 'SENDING...'
-          : 'SHOOT MESSAGE'"
-        [disabled]="sendState() === 'sending'"
-      />
-
-    </div>
-
-    @if (sendState() === 'success') {
-      <p class="success-message">
-        Thanks — your message has been sent!
-      </p>
-    }
-
-    @if (sendState() === 'error') {
-      <p class="error-message">
-        Something went wrong sending your message.
-        Please try again in a moment.
-      </p>
-    }
-
-  </form>
-
-</div>
+      </div>
       <div class="col-md-1 col-sm-1"></div>
       <div class="col-md-12 col-sm-12">
         <p>Copyright &copy; 2026 Srinivasan G. design</p>
       </div>
     </div>
   </div>
+
+  <!-- Toast popup -->
+  @if (sendState() === 'success' || sendState() === 'error') {
+    <div class="modal-backdrop" (click)="dismissToast()"></div>
+    <div class="modal-popup" [class.modal-success]="sendState() === 'success'" [class.modal-error]="sendState() === 'error'">
+      <button class="modal-close" (click)="dismissToast()" aria-label="Close">&times;</button>
+
+      @if (sendState() === 'success') {
+        <div class="modal-icon">✓</div>
+        <p class="modal-text">Thanks - your message has been sent!</p>
+      }
+
+      @if (sendState() === 'error') {
+        <div class="modal-icon">✕</div>
+        <p class="modal-text">Something went wrong sending your message. Please try again.</p>
+      }
+    </div>
+  }
+
 </section>

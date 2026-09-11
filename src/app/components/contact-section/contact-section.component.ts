@@ -1,6 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import emailjs from '@emailjs/browser';
+import { HttpClient } from '@angular/common/http';
+import { firstValueFrom } from 'rxjs';
 
 type SendState = 'idle' | 'sending' | 'success' | 'error';
 
@@ -13,6 +14,7 @@ type SendState = 'idle' | 'sending' | 'success' | 'error';
 })
 export class ContactSectionComponent {
   private readonly fb = new FormBuilder();
+  private readonly http = inject(HttpClient);
 
   readonly sendState = signal<SendState>('idle');
 
@@ -23,13 +25,8 @@ export class ContactSectionComponent {
     message: ['', Validators.required],
   });
 
-  /**
-   * Fill in your own EmailJS service/template/public keys here.
-   * Sign up at https://www.emailjs.com to get these values.
-   */
-  private readonly serviceId = 'YOUR_EMAILJS_SERVICE_ID';
-  private readonly templateId = 'YOUR_EMAILJS_TEMPLATE_ID';
-  private readonly publicKey = 'YOUR_EMAILJS_PUBLIC_KEY';
+  private readonly accessKey = '986fc6a2-13ee-4941-9120-30516e275b90';
+  private autoHideTimer?: ReturnType<typeof setTimeout>;
 
   async submit(): Promise<void> {
     if (this.form.invalid) {
@@ -38,15 +35,45 @@ export class ContactSectionComponent {
     }
 
     this.sendState.set('sending');
+
+    const payload = {
+      access_key: this.accessKey,
+      ...this.form.getRawValue(),
+    };
+
     try {
-      await emailjs.send(this.serviceId, this.templateId, this.form.getRawValue(), {
-        publicKey: this.publicKey,
-      });
-      this.sendState.set('success');
-      this.form.reset();
-    } catch (error) {
-      console.error('EmailJS send failed', error);
+      const response: any = await firstValueFrom(
+        this.http.post('https://api.web3forms.com/submit', payload)
+      );
+
+      if (response.success) {
+        this.sendState.set('success');
+        this.form.reset();
+      } else {
+        console.error('Web3Forms error:', response.message);
+        this.sendState.set('error');
+      }
+    } catch (error: any) {
+      console.error('Web3Forms send failed:', error);
       this.sendState.set('error');
     }
+
+    this.autoHideToast();
+  }
+
+  dismissToast(): void {
+    this.sendState.set('idle');
+    if (this.autoHideTimer) {
+      clearTimeout(this.autoHideTimer);
+    }
+  }
+
+  private autoHideToast(): void {
+    if (this.autoHideTimer) {
+      clearTimeout(this.autoHideTimer);
+    }
+    this.autoHideTimer = setTimeout(() => {
+      this.sendState.set('idle');
+    }, 5000);
   }
 }

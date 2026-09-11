@@ -9,7 +9,7 @@
       <a href="javascript:void(0)" class="navbar-brand" (click)="navigate('home')">Srinivasan G</a>
     </div>
     <nav class="collapse navbar-collapse" [class.in]="menuOpen()">
-      <ul class="nav navbar-nav navbar-right main-navigation text-uppercase">
+      <ul class="nav navbar-nav navbar-right main-navigation ">
         @for (link of links; track link.id) {
           <li [class.active]="activeSection() === link.id">
             <a href="javascript:void(0)" class="smoothScroll" (click)="navigate(link.id)">{{ link.label }}</a>
