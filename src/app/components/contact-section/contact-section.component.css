@@ -1,0 +1,356 @@
+/* =========================================
+   GLASSMORPHISM CONTACT CARD
+========================================= */
+
+.f-bg {
+  position: relative;
+  overflow: hidden;
+
+  padding: 50px;
+
+  border-radius: 28px;
+
+  /* Transparent glass */
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.16),
+      rgba(255, 255, 255, 0.07)
+    );
+
+  /* Glass border */
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  /* Neon glow + depth */
+  /* box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.45),
+    0 0 35px rgba(127, 76, 218, 0.35),
+    0 0 80px rgba(127, 76, 218, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35); */
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  z-index: 1;
+}
+
+
+/* =========================================
+   GLASS TOP REFLECTION
+========================================= */
+
+.f-bg::before {
+  content: "";
+
+  position: absolute;
+
+  top: -45%;
+  left: -10%;
+
+  width: 120%;
+  height: 75%;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.28),
+      rgba(255, 255, 255, 0.06),
+      transparent
+    );
+
+  transform: rotate(-3deg);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+/* =========================================
+   PURPLE / BLUE NEON LIGHT
+========================================= */
+
+.f-bg::after {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 350px;
+
+  right: -100px;
+  bottom: -180px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(127, 76, 218, 0.65) 0%,
+      rgba(105, 50, 220, 0.35) 30%,
+      rgba(50, 30, 180, 0.18) 50%,
+      transparent 75%
+    );
+
+  filter: blur(30px);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+/* =========================================
+   FORM CONTENT
+========================================= */
+
+.f-bg form {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.f-bg .form-control {
+  width: 100%;
+
+  min-height: 55px;
+
+  margin-bottom: 16px;
+
+  padding: 0 20px;
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.10),
+      rgba(255, 255, 255, 0.04)
+    );
+
+  border: 1px solid rgba(210, 190, 255, 0.45);
+
+  border-radius: 7px;
+
+  outline: none;
+
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.10),
+    0 5px 15px rgba(0, 0, 0, 0.10);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  transition: all 0.3s ease;
+}
+
+
+/* =========================================
+   PLACEHOLDER
+========================================= */
+
+.f-bg .form-control::placeholder {
+  color: rgba(235, 225, 250, 0.70);
+
+  opacity: 1;
+}
+
+
+/* =========================================
+   INPUT HOVER
+========================================= */
+
+.f-bg .form-control:hover {
+  border-color: rgba(180, 130, 255, 0.70);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.13),
+      rgba(255, 255, 255, 0.06)
+    );
+}
+
+
+/* =========================================
+   INPUT FOCUS
+========================================= */
+
+.f-bg .form-control:focus {
+  color: #ffffff;
+
+  border-color: #a66cff;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(127, 76, 218, 0.18),
+      rgba(255, 255, 255, 0.08)
+    );
+
+  box-shadow:
+    0 0 0 2px rgba(127, 76, 218, 0.15),
+    0 0 20px rgba(127, 76, 218, 0.30),
+    inset 0 1px 2px rgba(255, 255, 255, 0.12);
+}
+
+
+/* =========================================
+   TEXTAREA
+========================================= */
+
+.f-bg textarea.form-control {
+  min-height: 80px;
+
+  padding-top: 18px;
+
+  resize: vertical;
+}
+
+
+/* =========================================
+   SHOOT MESSAGE BUTTON
+========================================= */
+
+.f-bg input[type="submit"] {
+  min-height: 55px;
+
+  margin-top: 0;
+
+  color: #ffffff;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  /* background:
+    linear-gradient(
+      135deg,
+      rgba(127, 76, 218, 0.85),
+      rgba(70, 35, 170, 0.85)
+    ); */
+  background: #4285F4;
+  border: 1px solid rgba(190, 150, 255, 0.70);
+
+  border-radius: 7px;
+
+  box-shadow:
+    0 8px 25px rgba(80, 30, 180, 0.35),
+    0 0 20px rgba(127, 76, 218, 0.20),
+    inset 0 1px 0 rgba(255, 255, 255, 0.30);
+
+  transition: all 0.3s ease;
+}
+
+
+/* =========================================
+   BUTTON HOVER
+========================================= */
+
+.f-bg input[type="submit"]:hover {
+  /* background:
+    linear-gradient(
+      135deg,
+      #9b63ff,
+      #6635d6
+    ); */
+  background: #4285F4;
+  border-color: #c19aff;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 35px rgba(100, 40, 220, 0.50),
+    0 0 35px rgba(127, 76, 218, 0.40),
+    inset 0 1px 0 rgba(255, 255, 255, 0.40);
+      border-radius: 100px;
+  letter-spacing: 10px;
+}
+
+
+/* =========================================
+   BUTTON ACTIVE
+========================================= */
+
+.f-bg input[type="submit"]:active {
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   DISABLED BUTTON
+========================================= */
+
+.f-bg input[type="submit"]:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =========================================
+   SUCCESS MESSAGE
+========================================= */
+
+.f-bg p[style*="4caf50"] {
+  position: relative;
+
+  z-index: 5;
+
+  text-align: center;
+
+  text-shadow:
+    0 0 8px rgba(76, 175, 80, 0.45);
+}
+
+
+/* =========================================
+   ERROR MESSAGE
+========================================= */
+
+.f-bg p[style*="e53935"] {
+  position: relative;
+
+  z-index: 5;
+
+  text-align: center;
+
+  text-shadow:
+    0 0 8px rgba(229, 57, 53, 0.40);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .f-bg {
+    padding: 30px 20px;
+
+    border-radius: 20px;
+  }
+
+  .f-bg .form-control {
+    min-height: 58px;
+  }
+
+  .f-bg textarea.form-control {
+    min-height: 110px;
+  }
+
+  .f-bg input[type="submit"] {
+    min-height: 58px;
+  }
+}

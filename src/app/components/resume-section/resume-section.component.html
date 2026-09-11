@@ -1,0 +1,456 @@
+<section id="resume" class="profile-top">
+  <div>
+    <h1 class="heading">MY <strong class="second-word">PROFILE</strong></h1>
+    <div class="intro">
+      <strong>Creative UI/UX Designer &amp; Front-end Enthusiast</strong>
+      I design intuitive digital experiences that are visually appealing,
+      user-friendly, and impactful. I love turning complex problems into
+      simple, beautiful, and functional designs.
+    </div>
+  </div>
+
+  <div class="contact-card">
+    <div class="contact-column">
+      @for (fact of leftFacts; track fact.label) {
+      <div class="contact-item">
+        <div class="icon">
+          <i [class]="fact.icon"></i>
+        </div>
+        <div><b>{{ fact.label }}</b><span>{{ fact.value }}</span></div>
+      </div>
+      }
+    </div>
+
+    <div class="contact-column">
+      @for (fact of rightFacts; track fact.label) {
+      <div class="contact-item">
+        <div class="icon">
+          <i [class]="fact.icon"></i>
+        </div>
+        <div><b>{{ fact.label }}</b><span [class.blue]="fact.label === 'Phone' || fact.label === 'Website'">{{
+            fact.value }}</span></div>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+<div class="row">
+  <div class="col-12">
+    <div class="skills-timeline" #timelineContainer>
+      <div class="timeline-track"></div>
+      <div class="timeline-progress" #timelineProgress></div>
+
+      <div class="timeline-icons">
+        @for (icon of timelineIcons; track icon.name) {
+        <div class="tl-icon" #tlIcon>
+          <img [src]="icon.src" [alt]="icon.name" />
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+  <!-- <div class="col-12">
+        <div class="logos">
+          <div class="logo_items">
+            <img src="../../../assets/images/logo/figma.png">
+            <img src="../../../assets/images/logo/xd.png">
+            <img src="../../../assets/images/logo/photoshop.png">
+            <img src="../../../assets/images/logo/lr.png">
+            <img src="../../../assets/images/logo/ai.png">
+            <img src="../../../assets/images/logo/angular.png">
+            <img src="../../../assets/images/logo/html.png">
+            <img src="../../../assets/images/logo/css.png">
+            <img src="../../../assets/images/logo/react.png">
+            <img src="../../../assets/images/logo/bootstrap.png">
+            <img src="../../../assets/images/logo/vs code.png">
+            <img src="../../../assets/images/logo/git lab.png">
+            <img src="../../../assets/images/logo/powerpoint.png">
+            <img src="../../../assets/images/logo/chat gpt.png">
+            <img src="../../../assets/images/logo/claude.png">
+          </div>
+          <div class="logo_items">
+                       <img src="../../../assets/images/logo/figma.png">
+            <img src="../../../assets/images/logo/xd.png">
+            <img src="../../../assets/images/logo/photoshop.png">
+            <img src="../../../assets/images/logo/lr.png">
+            <img src="../../../assets/images/logo/ai.png">
+            <img src="../../../assets/images/logo/angular.png">
+            <img src="../../../assets/images/logo/html.png">
+            <img src="../../../assets/images/logo/css.png">
+            <img src="../../../assets/images/logo/react.png">
+            <img src="../../../assets/images/logo/bootstrap.png">
+            <img src="../../../assets/images/logo/vs code.png">
+            <img src="../../../assets/images/logo/git lab.png">
+            <img src="../../../assets/images/logo/powerpoint.png">
+            <img src="../../../assets/images/logo/chat gpt.png">
+            <img src="../../../assets/images/logo/claude.png">
+          </div>
+        </div>
+      </div> -->
+</div>
+<section class="skills-section" #skillsSection>
+
+  <!-- =====================================================
+       DESIGN SKILLS CARD
+  ====================================================== -->
+
+  <div class="skill-card">
+
+    <!-- Background glow -->
+    <div class="card-glow"></div>
+
+    <!-- Decorative lights -->
+    <div class="card-light card-light-1"></div>
+    <div class="card-light card-light-2"></div>
+
+
+    <!-- HEADER -->
+    <div class="skill-header">
+
+      <div class="skill-icon">
+        <span><i class="fa-solid fa-swatchbook"></i></span>
+      </div>
+
+      <div class="skill-heading">
+
+        <h2>
+          DESIGN <span>SKILLS</span>
+        </h2>
+
+        <div class="title-line"></div>
+
+      </div>
+
+    </div>
+
+
+    <!-- DESCRIPTION -->
+    <p class="skill-description">
+      I CREATE INTUITIVE DIGITAL EXPERIENCES BY COMBINING UI/UX DESIGN WITH
+      FRONT-END DEVELOPMENT. MY EXPERTISE INCLUDES DESIGNING USER-CENTERED
+      INTERFACES IN FIGMA AND BUILDING RESPONSIVE, ACCESSIBLE WEBSITES USING
+      MODERN WEB TECHNOLOGIES.
+    </p>
+
+
+    <!-- =====================================================
+         DESIGN CIRCLE GRID
+    ====================================================== -->
+
+    <div class="circle-grid">
+
+      <div
+        class="circle-skill"
+        *ngFor="let skill of designSkills; let i = index"
+      >
+
+        <div
+          class="progress-circle"
+          [attr.data-percent]="skill.percent"
+        >
+
+          <svg
+            class="skill-svg"
+            viewBox="0 0 120 120"
+          >
+
+            <!-- ================================
+                 GRADIENT + GLOW
+            ================================= -->
+
+            <defs>
+
+              <linearGradient
+                [attr.id]="'designGradient' + i"
+                x1="0%"
+                y1="100%"
+                x2="100%"
+                y2="0%"
+              >
+
+                <stop
+                  offset="0%"
+                  stop-color="#5725ff"
+                />
+
+                <stop
+                  offset="35%"
+                  stop-color="#8c2cff"
+                />
+
+                <stop
+                  offset="65%"
+                  stop-color="#ec36c8"
+                />
+
+                <stop
+                  offset="100%"
+                  stop-color="#ffb347"
+                />
+
+              </linearGradient>
+
+
+              <filter
+                [attr.id]="'designGlow' + i"
+                x="-100%"
+                y="-100%"
+                width="300%"
+                height="300%"
+              >
+
+                <feGaussianBlur
+                  stdDeviation="2.5"
+                  result="blur"
+                />
+
+                <feMerge>
+
+                  <feMergeNode
+                    in="blur"
+                  />
+
+                  <feMergeNode
+                    in="SourceGraphic"
+                  />
+
+                </feMerge>
+
+              </filter>
+
+            </defs>
+
+
+            <!-- ================================
+                 BACKGROUND RING
+            ================================= -->
+
+            <circle
+              class="circle-background"
+              cx="60"
+              cy="60"
+              r="50"
+            />
+
+
+            <!-- ================================
+                 ANIMATED PROGRESS RING
+            ================================= -->
+
+            <circle
+              class="circle-progress"
+              cx="60"
+              cy="60"
+              r="50"
+              [attr.stroke]="'url(#designGradient' + i + ')'"
+              [attr.filter]="'url(#designGlow' + i + ')'"
+            />
+
+          </svg>
+
+
+          <!-- PERCENTAGE -->
+
+          <div class="percentage">
+            {{ skill.percent }}%
+          </div>
+
+        </div>
+
+
+        <!-- SKILL NAME -->
+
+        <div class="skill-name">
+          {{ skill.name }}
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       UI IMPLEMENTATION SKILLS CARD
+  ====================================================== -->
+
+  <div class="skill-card">
+
+    <!-- Background glow -->
+    <div class="card-glow"></div>
+
+    <!-- Decorative lights -->
+    <div class="card-light card-light-1"></div>
+    <div class="card-light card-light-2"></div>
+
+
+    <!-- HEADER -->
+
+    <div class="skill-header">
+
+      <div class="skill-icon code-icon">
+       <i class="fa-solid fa-code"></i>
+      </div>
+
+      <div class="skill-heading">
+
+        <h2>
+          UI IMPLEMENTATION <span>SKILLS</span>
+        </h2>
+
+        <div class="title-line"></div>
+
+      </div>
+
+    </div>
+
+
+    <!-- DESCRIPTION -->
+
+    <p class="skill-description">
+      I TRANSFORM UI DESIGNS INTO RESPONSIVE WEB INTERFACES WHILE USING
+      AI-POWERED TOOLS TO IMPROVE DESIGN WORKFLOWS, GENERATE IDEAS,
+      OPTIMIZE CODE, AND ENHANCE OVERALL USER EXPERIENCES.
+    </p>
+
+
+    <!-- =====================================================
+         IMPLEMENTATION CIRCLE GRID
+    ====================================================== -->
+
+    <div class="circle-grid">
+
+      <div
+        class="circle-skill"
+        *ngFor="let skill of implementationSkills; let i = index"
+      >
+
+        <div
+          class="progress-circle"
+          [attr.data-percent]="skill.percent"
+        >
+
+          <svg
+            class="skill-svg"
+            viewBox="0 0 120 120"
+          >
+
+            <!-- ================================
+                 GRADIENT + GLOW
+            ================================= -->
+
+            <defs>
+
+              <linearGradient
+                [attr.id]="'uiGradient' + i"
+                x1="0%"
+                y1="100%"
+                x2="100%"
+                y2="0%"
+              >
+
+                <stop
+                  offset="0%"
+                  stop-color="#5725ff"
+                />
+
+                <stop
+                  offset="35%"
+                  stop-color="#8c2cff"
+                />
+
+                <stop
+                  offset="65%"
+                  stop-color="#ec36c8"
+                />
+
+                <stop
+                  offset="100%"
+                  stop-color="#ffb347"
+                />
+
+              </linearGradient>
+
+
+              <filter
+                [attr.id]="'uiGlow' + i"
+                x="-100%"
+                y="-100%"
+                width="300%"
+                height="300%"
+              >
+
+                <feGaussianBlur
+                  stdDeviation="2.5"
+                  result="blur"
+                />
+
+                <feMerge>
+
+                  <feMergeNode
+                    in="blur"
+                  />
+
+                  <feMergeNode
+                    in="SourceGraphic"
+                  />
+
+                </feMerge>
+
+              </filter>
+
+            </defs>
+
+
+            <!-- ================================
+                 BACKGROUND RING
+            ================================= -->
+
+            <circle
+              class="circle-background"
+              cx="60"
+              cy="60"
+              r="50"
+            />
+
+
+            <!-- ================================
+                 ANIMATED PROGRESS RING
+            ================================= -->
+
+            <circle
+              class="circle-progress"
+              cx="60"
+              cy="60"
+              r="50"
+              [attr.stroke]="'url(#uiGradient' + i + ')'"
+              [attr.filter]="'url(#uiGlow' + i + ')'"
+            />
+
+          </svg>
+
+
+          <!-- PERCENTAGE -->
+
+          <div class="percentage">
+            {{ skill.percent }}%
+          </div>
+
+        </div>
+
+
+        <!-- SKILL NAME -->
+
+        <div class="skill-name">
+          {{ skill.name }}
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

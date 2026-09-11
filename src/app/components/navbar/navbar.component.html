@@ -1,0 +1,21 @@
+<div class="navbar navbar-default bs-dos-nav navbar-fixed-top sticky-navigation" [class.is-visible]="scrolled()">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen()">
+        <span class="icon icon-bar"></span>
+        <span class="icon icon-bar"></span>
+        <span class="icon icon-bar"></span>
+      </button>
+      <a href="javascript:void(0)" class="navbar-brand" (click)="navigate('home')">Srinivasan G</a>
+    </div>
+    <nav class="collapse navbar-collapse" [class.in]="menuOpen()">
+      <ul class="nav navbar-nav navbar-right main-navigation text-uppercase">
+        @for (link of links; track link.id) {
+          <li [class.active]="activeSection() === link.id">
+            <a href="javascript:void(0)" class="smoothScroll" (click)="navigate(link.id)">{{ link.label }}</a>
+          </li>
+        }
+      </ul>
+    </nav>
+  </div>
+</div>

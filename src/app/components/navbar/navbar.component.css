@@ -1,0 +1,23 @@
+.sticky-navigation {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sticky-navigation.is-visible {
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+  .navbar-collapse {
+    display: none;
+  }
+
+  .navbar-collapse.in {
+    display: block;
+    background-color: #000000;
+    color: #000 !important;
+    margin-left: -35px;
+    margin-right: -35px;
+  }
+
+}

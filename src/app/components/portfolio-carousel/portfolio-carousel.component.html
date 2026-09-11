@@ -1,0 +1,48 @@
+<div class="carousel-container" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+  <div class="carousel">
+    <button class="carousel-btn prev" (click)="prev()" aria-label="Previous project">
+      &#10094;
+    </button>
+
+    <div class="carousel-window">
+      <div
+        class="carousel-track"
+        [style.transform]="trackOffset()"
+        (mousedown)="onDragStart($event)"
+        (mouseup)="onDragEnd($event)"
+        (touchstart)="onDragStart($event)"
+        (touchend)="onDragEnd($event)"
+      >
+        @for (card of cards; track card.index) {
+          <div class="carousel-card">
+            <div class="card-image">
+              <img [src]="card.image" [alt]="card.title" class="card-image-img" />
+            </div>
+            <div class="card-content">
+              <h3>{{ card.title }}</h3>
+              <p>{{ card.description }}</p>
+              <div class="">
+                  <button class="view-btn" (click)="openProject(card.slug)">View Project</button>
+              </div>
+              
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <button
+      class="carousel-btn next"
+      (click)="next()"
+      aria-label="Next project"
+    >
+      &#10095;
+    </button>
+  </div>
+
+  <div class="carousel-dots">
+    @for (card of cards; track card.index; let i = $index) {
+      <button class="dot" [class.active]="activeIndex() === i" (click)="goTo(i)" [attr.aria-label]="'Go to project ' + (i + 1)"></button>
+    }
+  </div>
+</div>

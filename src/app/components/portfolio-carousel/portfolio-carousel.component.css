@@ -1,0 +1,11 @@
+.card-image {
+    /* keep existing height/background/etc. as a fallback */
+    overflow: hidden;
+    padding: 0;
+}
+
+.card-image-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

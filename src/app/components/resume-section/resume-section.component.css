@@ -1,0 +1,1265 @@
+@keyframes slides {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos {
+  overflow: hidden;
+  padding: 30px 0px;
+  white-space: nowrap;
+  position: relative;
+}
+
+.logos::before,
+.logos::after {
+  position: absolute;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+  pointer-events: none;
+}
+
+.logos::before {
+  left: 0;
+
+  background: linear-gradient(
+    to right,
+    #02080d 0%,
+    rgba(2, 8, 13, 0.9) 15%,
+    rgba(38, 6, 79, 0.5) 45%,
+    rgba(72, 0, 68, 0.15) 75%,
+    transparent 100%
+  );
+}
+
+.logos::after {
+  right: 0;
+
+  background: linear-gradient(
+    to left,
+    #02080d 0%,
+    rgba(2, 8, 13, 0.9) 15%,
+    rgba(38, 6, 79, 0.5) 45%,
+    rgba(72, 0, 68, 0.15) 75%,
+    transparent 100%
+  );
+}
+
+.logo_items {
+  display: inline-block;
+  animation: 35s slides infinite linear;
+}
+
+.logos:hover .logo_items {
+  animation-play-state: paused;
+}
+
+.logo_items img{
+  height: 100px;
+}
+
+
+
+
+.skills-timeline {
+  position: relative;
+  padding: 60px 60px;
+  overflow: hidden;
+}
+
+.timeline-track {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-50%);
+}
+
+.timeline-progress {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background:  #6e2098;
+  box-shadow: 0 0 8px rgba(66, 133, 244, 0.8);
+  transform: translateY(-50%);
+  /* width is driven by JS below, not CSS transition,
+     so each icon flips at the exact moment the line reaches it */
+}
+
+.timeline-icons {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  z-index: 1;
+}
+
+.tl-icon {
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: #070707;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.tl-icon img {
+  /* width: 28px; */
+  height: 28px;
+  filter: grayscale(1) brightness(0.6);
+  transition: filter 0.8s ease; /* was 0.4s */
+}
+
+/* Applied by JS the instant the progress line reaches this icon */
+.tl-icon.revealed img {
+  filter: none;
+}
+
+.tl-icon.revealed {
+  transform: scale(1.08);
+  box-shadow:
+    0 0 10px rgba(127, 76, 218, 0.5),
+    0 0 25px rgba(127, 76, 218, 0.4),
+    0 0 50px rgba(192, 38, 211, 0.25);
+    background-color: #fff;
+}
+
+
+@media (max-width: 767px) {
+  .timeline-icons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .timeline-track,
+  .timeline-progress {
+    display: none;
+  }
+}
+
+
+
+/* =========================================================
+   SKILLS SECTION
+========================================================= */
+
+.skills-section {
+
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 42px;
+
+  width: 100%;
+
+  padding: 70px 35px;
+
+  background: #000;
+
+  overflow: hidden;
+
+}
+
+
+
+/* =========================================================
+   SKILL CARD
+========================================================= */
+
+.skill-card {
+
+  position: relative;
+
+  min-height: 720px;
+
+  padding: 38px 35px 45px;
+
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  background:
+
+    radial-gradient(
+      circle at 10% 0%,
+      rgba(91, 33, 255, 0.09),
+      transparent 35%
+    ),
+
+    radial-gradient(
+      circle at 100% 100%,
+      rgba(255, 173, 70, 0.045),
+      transparent 30%
+    ),
+
+    linear-gradient(
+      145deg,
+      #09090d 0%,
+      #040407 55%,
+      #020204 100%
+    );
+
+  border:
+
+    1px solid
+    rgba(113, 54, 255, 0.28);
+
+  box-shadow:
+
+    0 30px 90px
+    rgba(0, 0, 0, 0.9),
+
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.035);
+
+}
+
+
+
+/* =========================================================
+   CARD TOP BORDER
+========================================================= */
+
+.skill-card::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 4%;
+
+  width: 92%;
+  height: 1px;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(103, 39, 255, 0.8),
+      rgba(236, 54, 200, 0.7),
+      rgba(255, 179, 71, 0.8),
+      transparent
+    );
+
+  box-shadow:
+
+    0 0 15px
+    rgba(130, 50, 255, 0.45);
+
+}
+
+
+
+/* =========================================================
+   CARD GLOW
+========================================================= */
+
+.card-glow {
+
+  position: absolute;
+
+  top: -280px;
+  left: 50%;
+
+  width: 500px;
+  height: 500px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+
+    radial-gradient(
+      circle,
+      rgba(99, 35, 255, 0.13),
+      transparent 68%
+    );
+
+  filter: blur(25px);
+
+  pointer-events: none;
+
+}
+
+
+
+/* =========================================================
+   DECORATIVE LIGHT
+========================================================= */
+
+.card-light {
+
+  position: absolute;
+
+  pointer-events: none;
+
+  opacity: 0.5;
+
+}
+
+
+
+.card-light-1 {
+
+  right: -120px;
+  bottom: -180px;
+
+  width: 350px;
+  height: 350px;
+
+  border-radius: 50%;
+
+  background:
+
+    radial-gradient(
+      circle,
+      rgba(255, 161, 61, 0.07),
+      transparent 70%
+    );
+
+  filter: blur(15px);
+
+}
+
+
+
+.card-light-2 {
+
+  left: -150px;
+  bottom: -150px;
+
+  width: 320px;
+  height: 320px;
+
+  border-radius: 50%;
+
+  background:
+
+    radial-gradient(
+      circle,
+      rgba(130, 35, 255, 0.07),
+      transparent 70%
+    );
+
+  filter: blur(20px);
+
+}
+
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.skill-header {
+
+  position: relative;
+
+  z-index: 5;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+}
+
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.skill-icon {
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 76px;
+  height: 76px;
+
+  min-width: 76px;
+
+  border-radius: 50%;
+
+  background:
+
+    radial-gradient(
+      circle at 30% 20%,
+      #fff7e5,
+      #d8c8aa
+    );
+
+  color: #8b6d3e;
+
+  font-size: 30px;
+
+  border:
+
+    2px solid
+    rgba(255, 196, 92, 0.8);
+
+  box-shadow:
+
+    0 0 15px
+    rgba(255, 174, 64, 0.28),
+
+    0 0 40px
+    rgba(255, 174, 64, 0.1),
+
+    inset 0 2px 5px
+    rgba(255, 255, 255, 0.8);
+
+}
+
+
+
+.skill-icon span {
+
+  transform:
+    rotate(-10deg);
+
+}
+
+
+
+.code-icon {
+
+  font-size: 22px;
+
+  font-weight: 400;
+
+}
+
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.skill-heading h2 {
+
+  margin: 0;
+
+  padding: 0;
+
+  color: #ddd6ce;
+
+  font-size: 25px;
+
+  line-height: 1.2;
+
+  font-weight: 400;
+
+  letter-spacing: -0.5px;
+
+}
+
+
+
+.skill-heading h2 span {
+
+  color: #9a32ff;
+
+  text-shadow:
+
+    0 0 10px
+    rgba(154, 50, 255, 0.45);
+
+}
+
+
+
+/* =========================================================
+   TITLE LINE
+========================================================= */
+
+.title-line {
+
+  width: 76px;
+
+  height: 2px;
+
+  margin-top: 12px;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      #ffc857,
+      #8b2cff
+    );
+
+  box-shadow:
+
+    0 0 8px
+    rgba(139, 44, 255, 0.6);
+
+}
+
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.skill-description {
+
+  position: relative;
+
+  z-index: 5;
+
+  max-width: 95%;
+
+  margin:
+
+    30px 0
+    38px;
+
+  color: #77716c;
+
+  font-size: 14px;
+
+  line-height: 1.9;
+
+  font-weight: 400;
+
+  letter-spacing: 0.05px;
+
+}
+
+
+
+/* =========================================================
+   CIRCLE GRID
+========================================================= */
+
+.circle-grid {
+
+  position: relative;
+
+  z-index: 5;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap:
+
+    38px
+    15px;
+
+}
+
+
+
+/* =========================================================
+   CIRCLE ITEM
+========================================================= */
+
+.circle-skill {
+
+  position: relative;
+
+  text-align: center;
+
+  transition:
+
+    transform
+    0.35s
+    ease;
+
+}
+
+
+
+/* =========================================================
+   PROGRESS CIRCLE
+========================================================= */
+
+.progress-circle {
+
+  position: relative;
+
+  width: 70px;
+  height: 70px;
+
+  margin: auto;
+
+}
+
+
+
+/* =========================================================
+   SVG
+========================================================= */
+
+.progress-circle svg {
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  overflow: visible;
+
+}
+
+
+
+/* =========================================================
+   BACKGROUND CIRCLE
+========================================================= */
+
+.circle-background {
+
+  fill: none;
+
+  stroke:
+
+    rgba(79, 52, 147, 0.18);
+
+  stroke-width: 7;
+
+}
+
+
+
+/* =========================================================
+   PROGRESS RING
+========================================================= */
+
+.circle-progress {
+
+  fill: none;
+
+  stroke-width: 4;
+
+  stroke-linecap: round;
+
+   stroke-dasharray: 314.159;
+  stroke-dashoffset: 314.159;
+
+  /*
+   * Start completely empty.
+   */
+
+
+  transform:
+
+    rotate(-90deg);
+
+  transform-origin:
+
+    60px 60px;
+
+  /*
+   * Smooth ring animation.
+   */
+  transition:
+    stroke-dashoffset 5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+
+
+
+
+/* =========================================================
+   WHEN USER SCROLLS TO SECTION
+========================================================= */
+
+.skills-visible
+.circle-progress {
+
+  stroke-dashoffset:
+
+    var(--offset);
+
+}
+
+
+
+/* =========================================================
+   GLOW ANIMATION
+========================================================= */
+
+.skills-visible
+.circle-skill {
+
+  animation:
+
+    circleAppear
+    0.7s
+    ease
+    both;
+
+}
+
+
+
+@keyframes circleAppear {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(18px)
+      scale(0.92);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+  }
+
+}
+
+
+
+/* =========================================================
+   STAGGER ANIMATION
+========================================================= */
+
+.skills-visible
+.circle-skill:nth-child(1) {
+
+  animation-delay: 0.05s;
+
+}
+
+
+.skills-visible
+.circle-skill:nth-child(2) {
+
+  animation-delay: 0.10s;
+
+}
+
+
+.skills-visible
+.circle-skill:nth-child(3) {
+
+  animation-delay: 0.15s;
+
+}
+
+
+.skills-visible
+.circle-skill:nth-child(4) {
+
+  animation-delay: 0.20s;
+
+}
+
+
+.skills-visible
+.circle-skill:nth-child(5) {
+
+  animation-delay: 0.25s;
+
+}
+
+
+.skills-visible
+.circle-skill:nth-child(6) {
+
+  animation-delay: 0.30s;
+
+}
+
+
+.skills-visible
+.circle-skill:nth-child(7) {
+
+  animation-delay: 0.35s;
+
+}
+
+
+.skills-visible
+.circle-skill:nth-child(8) {
+
+  animation-delay: 0.40s;
+
+}
+
+
+.skills-visible
+.circle-skill:nth-child(9) {
+
+  animation-delay: 0.45s;
+
+}
+
+
+.skills-visible
+.circle-skill:nth-child(10) {
+
+  animation-delay: 0.50s;
+
+}
+
+
+.skills-visible
+.circle-skill:nth-child(11) {
+
+  animation-delay: 0.55s;
+
+}
+
+
+
+/* =========================================================
+   PERCENTAGE
+========================================================= */
+
+.percentage {
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform:
+
+    translate(
+      -50%,
+      -50%
+    );
+
+  color: #eadbed;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.4px;
+
+  white-space: nowrap;
+
+  text-shadow:
+
+    0 0 10px
+    rgba(205, 120, 255, 0.3);
+
+}
+
+
+
+/* =========================================================
+   SKILL NAME
+========================================================= */
+
+.skill-name {
+
+  min-height: 32px;
+
+  margin-top: 14px;
+
+  color: #918791;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+
+  text-transform: uppercase;
+
+  transition:
+
+    color
+    0.3s
+    ease;
+
+}
+
+
+
+/* =========================================================
+   HOVER EFFECT
+========================================================= */
+
+.circle-skill:hover {
+
+  transform:
+    translateY(-6px)
+    scale(1.03);
+
+}
+
+
+
+.circle-skill:hover
+.circle-progress {
+
+  filter:
+
+    drop-shadow(
+      0 0 5px
+      rgba(116, 43, 255, 0.9)
+    )
+
+    drop-shadow(
+      0 0 12px
+      rgba(236, 54, 200, 0.65)
+    )
+
+    drop-shadow(
+      0 0 20px
+      rgba(255, 179, 71, 0.25)
+    );
+
+}
+
+
+
+.circle-skill:hover
+.skill-name {
+
+  color: #e2c9eb;
+
+}
+
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.skill-card {
+
+  transition:
+
+    border-color
+    0.4s
+    ease,
+
+    box-shadow
+    0.4s
+    ease,
+
+    transform
+    0.4s
+    ease;
+
+}
+
+
+
+.skill-card:hover {
+
+  border-color:
+
+    rgba(130, 58, 255, 0.45);
+
+  box-shadow:
+
+    0 30px 90px
+    rgba(0, 0, 0, 0.9),
+
+    0 0 35px
+    rgba(92, 32, 255, 0.06),
+
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.05);
+
+}
+
+
+
+/* =========================================================
+   DESKTOP LARGE
+========================================================= */
+
+@media (min-width: 1400px) {
+
+  .skills-section {
+
+    padding-left: 55px;
+    padding-right: 55px;
+
+  }
+
+
+  .circle-grid {
+
+    gap:
+
+      42px
+      18px;
+
+  }
+
+
+  .progress-circle {
+
+    width: 118px;
+    height: 118px;
+
+  }
+
+}
+
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1250px) {
+
+  .circle-grid {
+
+    grid-template-columns:
+      repeat(3, 1fr);
+
+  }
+
+
+  .skill-card {
+
+    min-height: auto;
+
+  }
+
+}
+
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .skills-section {
+
+    grid-template-columns:
+      1fr;
+
+    gap: 30px;
+
+    padding:
+
+      50px
+      25px;
+
+  }
+
+
+  .skill-card {
+
+    min-height: auto;
+
+  }
+
+
+  .circle-grid {
+
+    grid-template-columns:
+      repeat(4, 1fr);
+
+  }
+
+}
+
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .circle-grid {
+
+    grid-template-columns:
+      repeat(3, 1fr);
+
+  }
+
+
+  .skill-description {
+
+    max-width: 100%;
+
+  }
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+  .skills-section {
+
+    padding:
+
+      35px
+      15px;
+
+    gap: 25px;
+
+  }
+
+
+  .skill-card {
+
+    padding:
+
+      30px
+      18px
+      35px;
+
+    border-radius: 22px;
+
+  }
+
+
+  .skill-header {
+
+    gap: 17px;
+
+  }
+
+
+  .skill-icon {
+
+    width: 62px;
+    height: 62px;
+
+    min-width: 62px;
+
+    font-size: 23px;
+
+  }
+
+
+  .skill-heading h2 {
+
+    font-size: 18px;
+
+  }
+
+
+  .title-line {
+
+    width: 55px;
+
+    margin-top: 9px;
+
+  }
+
+
+  .skill-description {
+
+    margin:
+
+      25px 0
+      30px;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+  }
+
+
+  .circle-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap:
+
+      30px
+      8px;
+
+  }
+
+
+  .progress-circle {
+
+    width: 95px;
+    height: 95px;
+
+  }
+
+
+  .percentage {
+
+    font-size: 14px;
+
+  }
+
+
+  .skill-name {
+
+    font-size: 9px;
+
+  }
+
+}
+
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 350px) {
+
+  .progress-circle {
+
+    width: 85px;
+    height: 85px;
+
+  }
+
+
+  .skill-name {
+
+    font-size: 8px;
+
+  }
+
+}
+

@@ -1,0 +1,683 @@
+/* =========================================================
+   MY WORK SECTION
+   ========================================================= */
+
+.my-work {
+    width: 100%;
+    padding: 80px 0 100px;
+    background: #000;
+    color: #d0c9bd;
+}
+
+.my-work .container {
+    width: min(1200px, 100%);
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+
+/* =========================================================
+   SECTION INTRO
+   ========================================================= */
+
+.my-work-header {
+    max-width: 800px;
+    margin-bottom: 45px;
+}
+
+.my-work-header h2 {
+    margin: 0 0 18px;
+    font-family: "Phudu", Arial, sans-serif;
+    font-size: clamp(45px, 6vw, 75px);
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    color: #d0c9bd;
+}
+
+.my-work-header h2 span {
+    font-weight: 800;
+    color: #f5f2eb;
+}
+
+.my-work-header p {
+    max-width: 650px;
+    margin: 0;
+    font-family: "Phudu", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #8f8a82;
+}
+
+
+/* =========================================================
+   WORK GRID
+   ========================================================= */
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    width: 100%;
+    align-items: start;
+}
+
+
+/* =========================================================
+   WORK CARD
+   ========================================================= */
+
+.work-card {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #0d0d0d;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+/* Google-style gradient border */
+
+.work-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+
+    background: linear-gradient(
+        90deg,
+        #4285F4 0%,
+        #4285F4 25%,
+        #34A853 40%,
+        #FBBC05 60%,
+        #EA4335 75%,
+        #4285F4 100%
+    );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    opacity: 0;
+    transition: opacity 0.4s ease;
+
+    pointer-events: none;
+    z-index: 5;
+}
+
+
+/* =========================================================
+   CARD HOVER
+   ========================================================= */
+
+.work-card:hover {
+    transform: translateY(-8px);
+
+    border-color: transparent;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.6),
+        0 0 30px rgba(66, 133, 244, 0.08);
+}
+
+.work-card:hover::before {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   IMAGE WRAPPER
+   ========================================================= */
+
+.work-card-image {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #111;
+}
+
+
+/* =========================================================
+   IMAGE
+   IMPORTANT:
+   DO NOT USE object-fit: cover
+   ========================================================= */
+
+.work-card-image img,
+.work-card img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    max-width: 100%;
+
+    object-fit: contain;
+
+    transition:
+        transform 0.7s cubic-bezier(0.2, 0.65, 0.3, 1),
+        filter 0.5s ease;
+}
+
+
+/* Image zoom */
+
+.work-card:hover .work-card-image img,
+.work-card:hover img {
+    transform: scale(1.035);
+}
+
+
+/* =========================================================
+   IMAGE DARK OVERLAY
+   ========================================================= */
+
+.work-card-image::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.35),
+            transparent 35%
+        );
+
+    opacity: 0;
+
+    transition: opacity 0.4s ease;
+
+    pointer-events: none;
+}
+
+.work-card:hover .work-card-image::after {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   PROJECT COUNT BADGE
+   ========================================================= */
+
+.project-count {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    z-index: 10;
+
+    padding: 9px 14px;
+
+    border-radius: 30px;
+
+    background: rgba(5, 5, 5, 0.75);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    color: #fff;
+
+    font-family: "Phudu", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.work-card:hover .project-count {
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   PROJECT INFORMATION
+   ========================================================= */
+
+.work-card-content {
+    padding: 24px 22px 25px;
+
+    background: #0c0c0c;
+}
+
+.work-card-content h3 {
+    margin: 0 0 8px;
+
+    font-family: "Phudu", Arial, sans-serif;
+
+    font-size: 23px;
+    font-weight: 700;
+
+    line-height: 1.1;
+
+    color: #f4f1eb;
+}
+
+.work-card-content p {
+    margin: 0 0 18px;
+
+    font-family: "Phudu", Arial, sans-serif;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    line-height: 1.6;
+
+    color: #8d8982;
+}
+
+
+/* =========================================================
+   PROJECT TAGS
+   ========================================================= */
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.project-tags span {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 6px 10px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 30px;
+
+    font-family: "Phudu", Arial, sans-serif;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    color: #aaa49a;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.work-card:hover .project-tags span {
+    color: #ddd8d0;
+    border-color: rgba(255, 255, 255, 0.22);
+}
+
+
+/* =========================================================
+   VIEW PROJECT BUTTON
+   ========================================================= */
+
+.view-project {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 20px;
+
+    font-family: "Phudu", Arial, sans-serif;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    text-decoration: none;
+
+    color: #4285f4;
+
+    transition:
+        gap 0.3s ease,
+        color 0.3s ease;
+}
+
+.view-project::after {
+    content: "→";
+
+    font-size: 18px;
+
+    transition: transform 0.3s ease;
+}
+
+.view-project:hover {
+    gap: 12px;
+}
+
+.view-project:hover::after {
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   OPTIONAL: CATEGORY FILTER
+   ========================================================= */
+
+.work-filter {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 35px;
+}
+
+.work-filter button {
+    position: relative;
+
+    padding: 9px 17px;
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+
+    border-radius: 30px;
+
+    background: transparent;
+
+    color: #88847c;
+
+    font-family: "Phudu", Arial, sans-serif;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.work-filter button:hover,
+.work-filter button.active {
+    color: #fff;
+
+    border-color: rgba(255, 255, 255, 0.4);
+
+    background: rgba(255, 255, 255, 0.06);
+}
+
+
+/* =========================================================
+   4 CARD VERSION
+   ========================================================= */
+
+.work-grid.four-columns {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.work-grid.four-columns .work-card-content {
+    padding: 18px;
+}
+
+.work-grid.four-columns .work-card-content h3 {
+    font-size: 19px;
+}
+
+
+/* =========================================================
+   FEATURED CARD
+   ========================================================= */
+
+.work-card.featured {
+    grid-column: span 2;
+}
+
+.work-card.featured .work-card-content h3 {
+    font-size: 28px;
+}
+
+
+/* =========================================================
+   EMPTY / PLACEHOLDER CARD
+   ========================================================= */
+
+.work-card.placeholder {
+    min-height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px dashed rgba(255, 255, 255, 0.12);
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(66, 133, 244, 0.08),
+            transparent 60%
+        );
+}
+
+.work-card.placeholder::before {
+    display: none;
+}
+
+.placeholder-content {
+    text-align: center;
+    padding: 30px;
+}
+
+.placeholder-content span {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 40px;
+
+    color: #444;
+}
+
+.placeholder-content h3 {
+    margin: 0 0 8px;
+
+    font-family: "Phudu", Arial, sans-serif;
+
+    font-size: 20px;
+
+    color: #777;
+}
+
+.placeholder-content p {
+    margin: 0;
+
+    font-family: "Phudu", Arial, sans-serif;
+
+    font-size: 12px;
+
+    color: #555;
+}
+
+
+/* =========================================================
+   SCROLL REVEAL SUPPORT
+   ========================================================= */
+
+.work-card {
+    opacity: 1;
+    transform-origin: center bottom;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .my-work {
+        padding: 70px 0 80px;
+    }
+
+    .work-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .work-grid.four-columns {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .work-card.featured {
+        grid-column: span 2;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .my-work {
+        padding: 55px 0 70px;
+    }
+
+    .my-work .container {
+        padding: 0 18px;
+    }
+
+    .my-work-header {
+        margin-bottom: 30px;
+    }
+
+    .my-work-header h2 {
+        font-size: 48px;
+        letter-spacing: -1px;
+    }
+
+    .my-work-header p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .work-grid,
+    .work-grid.four-columns {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .work-card.featured {
+        grid-column: span 1;
+    }
+
+    .work-card.featured .work-card-content h3 {
+        font-size: 23px;
+    }
+
+    .work-card-content {
+        padding: 20px;
+    }
+
+    .work-card-content h3 {
+        font-size: 21px;
+    }
+
+    .project-count {
+        top: 12px;
+        right: 12px;
+
+        padding: 7px 11px;
+
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .my-work .container {
+        padding: 0 14px;
+    }
+
+    .my-work-header h2 {
+        font-size: 40px;
+    }
+
+    .my-work-header p {
+        font-size: 12px;
+    }
+
+    .work-grid {
+        gap: 16px;
+    }
+
+    .work-card-content {
+        padding: 17px;
+    }
+
+    .project-tags span {
+        font-size: 10px;
+        padding: 5px 8px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.work-card:focus-within {
+    outline: 1px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .work-card,
+    .work-card img,
+    .work-card::before,
+    .work-card-image::after,
+    .project-count,
+    .view-project,
+    .view-project::after {
+        transition: none;
+    }
+
+    .work-card:hover {
+        transform: none;
+    }
+
+    .work-card:hover img {
+        transform: none;
+    }
+}
