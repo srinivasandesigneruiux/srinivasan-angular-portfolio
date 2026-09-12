@@ -16,8 +16,8 @@ interface SocialLink {
 })
 export class SocialSectionComponent {
   readonly links: SocialLink[] = [
-    { cssClass: 'facebook', icon: 'fa fa-facebook', eyebrow: 'Follow me on', title: 'Social Facebook', href: '#' },
-    { cssClass: 'twitter', icon: 'fa fa-twitter', eyebrow: 'Tweet me on', title: 'Social Twitter', href: '#' },
-    { cssClass: 'pinterest', icon: 'fa fa-pinterest', eyebrow: 'Pin me on', title: 'Social Pinterest', href: '#' },
+    { cssClass: 'facebook', icon: 'fa-brands fa-facebook', eyebrow: 'Follow me on', title: 'Social Facebook', href: '#' },
+    { cssClass: 'Linkedin', icon: 'fa-brands fa-linkedin-in', eyebrow: 'Contact me on', title: 'Social Linkedin', href: '#' },
+    { cssClass: 'Behance', icon: 'fa-brands fa-square-behance', eyebrow: 'Get to Touch', title: 'Social Behance', href: '#' },
   ];
 }

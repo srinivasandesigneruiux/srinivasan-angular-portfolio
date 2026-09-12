@@ -237,7 +237,7 @@
       rgba(127, 76, 218, 0.85),
       rgba(70, 35, 170, 0.85)
     ); */
-  background: #4285F4;
+  background: #9a32ff;
   border: 1px solid rgba(190, 150, 255, 0.70);
 
   border-radius: 7px;
@@ -262,7 +262,7 @@
       #9b63ff,
       #6635d6
     ); */
-  background: #4285F4;
+  background: #9a32ff;
   border-color: #c19aff;
 
   transform: translateY(-3px);

@@ -97,12 +97,12 @@
 
     background: linear-gradient(
         90deg,
-        #4285F4 0%,
-        #4285F4 25%,
+        #9a32ff 0%,
+        #9a32ff 25%,
         #34A853 40%,
         #FBBC05 60%,
         #EA4335 75%,
-        #4285F4 100%
+        #9a32ff 100%
     );
 
     -webkit-mask:
@@ -354,7 +354,7 @@
 
     text-decoration: none;
 
-    color: #4285f4;
+    color: #9a32ff;
 
     transition:
         gap 0.3s ease,
