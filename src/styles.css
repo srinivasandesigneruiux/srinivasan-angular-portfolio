@@ -243,10 +243,10 @@ hr {
   color: #ffffff;
   border: none;
   border-radius: 2px;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 700;
   margin-top: 30px;
-  padding: 15px 50px;
+  padding: 20px 50px;
   -webkit-transition: all 0.6s ease-in;
           transition: all 0.6s ease-in;
 }
@@ -1324,7 +1324,7 @@ hr{
 
     border-radius: 8px;
 
-    background: #2e2e2e;;
+   background: radial-gradient(circle at 10% 0%, rgba(91, 33, 255, 0.09), transparent 35%), radial-gradient(circle at 100% 100%, rgba(255, 173, 70, 0.045), transparent 30%), linear-gradient(145deg, #09090d 0%, #040407 55%, #020204 100%) !important;
 
     color: #ffffff;
 
@@ -1338,7 +1338,7 @@ hr{
 
 .view-btn:hover {
     background: #1b58bb;
-    box-shadow: 0 0 8px rgba(66, 133, 244, 0.6), 0 0 20px rgba(66, 133, 244, 0.5), 0 0 40px rgba(66, 133, 244, 0.3);
+    box-shadow: rgb(154 50 255) 0px 0px 8px, rgb(176 101 248) 0px 0px 20px, rgba(66, 133, 244, 0.3) 0px 0px 40px;
     transform: translateY(-2px);
     border-radius: 100px;
     color: #fff;
@@ -1600,4 +1600,16 @@ html {
 
 .reveal-fade-right {
   transform: translateX(40px);
+}
+
+.btn-primary{
+  margin-top: 30px;
+  padding: 20px 20px;
+  border-radius: 2px !important;
+  border: 1px solid rgba(113, 54, 255, 0.28) !important;
+  background: radial-gradient(circle at 10% 0%, rgba(91, 33, 255, 0.09), transparent 35%), radial-gradient(circle at 100% 100%, rgba(255, 173, 70, 0.045), transparent 30%), linear-gradient(145deg, #09090d 0%, #040407 55%, #020204 100%) !important;
+}
+.btn-grp{
+  display: flex;
+  gap: 10px;
 }
