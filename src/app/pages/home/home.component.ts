@@ -26,3 +26,4 @@ import { ScrollRevealDirective } from '../../shared/scroll-reveal.directive';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {}
+

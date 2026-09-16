@@ -158,9 +158,9 @@ export const MODAL_GALLERIES: Record<string, ModalGallery> = {
     id: 'myModal',
     title: 'TNPDS (Public Distribution System)',
     images: [
-      P + 'tnpds/Home-Public-Distribution-System-08-10-2026-02-17-PM.webp',
-      P + 'tnpds/Home-Public-Distribution-System-08-10-2026-02-18-PM.webp',
-      P + 'tnpds/Home-Public-Distribution-System.webp',
+      P + 'tnpds/Home-Public-Distribution-System-08-10-2026-02-17-PM.png',
+      P + 'tnpds/Home-Public-Distribution-System-08-10-2026-02-18-PM.png',
+      P + 'tnpds/Home-Public-Distribution-System.png',
     ],
   },
   coptext: {
@@ -172,19 +172,19 @@ export const MODAL_GALLERIES: Record<string, ModalGallery> = {
     id: 'empportalweb',
     title: 'OASYS Employee Portal',
     images: [
-      P + 'tnpds/emp-web-login.webp',
-      P + 'tnpds/emp-web-dashboard.webp',
-      P + 'tnpds/emp-portal-profile.webp',
+      P + 'tnpds/emp-web-login.png',
+      P + 'tnpds/emp-web-dashboard.png',
+      P + 'tnpds/emp-portal-profile.png',
     ],
   },
   upexcise: {
     id: 'upexcise',
     title: 'UP Excise',
     images: [
-      P + 'tnpds/UP-Excise-Department-Admin.webp',
+      P + 'tnpds/UP-Excise-Department-Admin.png',
       P + 'tnpds/UP-Excise-login.webp',
-      P + 'tnpds/UP-Excise-page2.webp',
-      P + 'tnpds/up.webp',
+      P + 'tnpds/UP-Excise-page2.png',
+      P + 'tnpds/up.png',
     ],
   },
   empportalapp: {
@@ -198,7 +198,7 @@ export const MODAL_GALLERIES: Record<string, ModalGallery> = {
     images: [
       P + 'tnpds/OCX-Labs-1.webp',
       P + 'tnpds/OCX-Labs-2.webp',
-      P + 'tnpds/OCX-Labs-3.webp',
+      P + 'tnpds/OCX-Labs-3.png',
     ],
   },
   gdwork: {
@@ -214,7 +214,7 @@ export const MODAL_GALLERIES: Record<string, ModalGallery> = {
           P + 'broucher/tri-2-back.webp',
           P + 'broucher/tri-3-front.webp',
           P + 'broucher/tri-3-back.webp',
-          P + 'broucher/tri-4-front.webp',
+          P + 'broucher/tri-4-front.jpg',
           P + 'broucher/tri-4-back.webp',
           P + 'broucher/b-1.webp',
           P + 'broucher/b-2.webp',
@@ -278,10 +278,10 @@ export const MODAL_GALLERIES: Record<string, ModalGallery> = {
     id: 'ocxmobileapp',
     title: 'OCX Battery Passport',
     images: [
-      P + 'mobile-app/battery-passport/1.webp',
-      P + 'mobile-app/battery-passport/2.webp',
-      P + 'mobile-app/battery-passport/3.webp',
-      P + 'mobile-app/battery-passport/4.webp',
+      P + 'mobile-app/battery-passport/1.jpg',
+      P + 'mobile-app/battery-passport/2.jpg',
+      P + 'mobile-app/battery-passport/3.jpg',
+      P + 'mobile-app/battery-passport/4.jpg',
     ],
   },
   primetripapp: {
@@ -302,15 +302,15 @@ export const MODAL_GALLERIES: Record<string, ModalGallery> = {
     images: [
       P + 'redmine/login-1.webp',
       P + 'redmine/dashboard-2.webp',
-      P + 'redmine/task-list-3.webp',
-      P + 'redmine/timesheet-4.webp',
-      P + 'redmine/submit-5.webp',
-      P + 'redmine/approve-6.webp',
-      P + 'redmine/add-new-7.webp',
-      P + 'redmine/createtask-8.webp',
-      P + 'redmine/tab-1.webp',
-      P + 'redmine/tab-2.webp',
-      P + 'redmine/tab-3.webp',
+      P + 'redmine/task-list-3.png',
+      P + 'redmine/timesheet-4.png',
+      P + 'redmine/submit-5.png',
+      P + 'redmine/approve-6.png',
+      P + 'redmine/add-new-7.png',
+      P + 'redmine/createtask-8.png',
+      P + 'redmine/tab-1.png',
+      P + 'redmine/tab-2.png',
+      P + 'redmine/tab-3.png',
     ],
   },
   oasyspharmaapp: {
@@ -710,4 +710,6 @@ export const IMPLEMENTATION_SKILLS: SkillItem[] = [
   { name: 'AI-Assisted Coding', percent: 60 },
   { name: 'Prompt Engineering', percent: 50 },
 ];
+
+
 

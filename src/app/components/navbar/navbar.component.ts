@@ -43,3 +43,4 @@ export class NavbarComponent {
     this.menuOpen.set(false);
   }
 }
+

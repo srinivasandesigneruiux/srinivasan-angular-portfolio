@@ -10,3 +10,4 @@ import { ScrollRevealDirective } from '../../shared/scroll-reveal.directive';
     ],
 })
 export class AboutSectionComponent {}
+

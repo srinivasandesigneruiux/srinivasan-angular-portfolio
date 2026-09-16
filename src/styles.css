@@ -688,6 +688,11 @@ input { height: 50px; }
   background-color: transparent;
   font-weight: bold;
 }
+.btn-grp {
+    display: flex !important;
+    gap: 10px !important;
+    flex-direction: column !important;
+}
   
 }
 /* END MEDIA 360 */
@@ -1613,5 +1618,6 @@ html {
   display: flex;
   gap: 10px;
 }
+
 
 

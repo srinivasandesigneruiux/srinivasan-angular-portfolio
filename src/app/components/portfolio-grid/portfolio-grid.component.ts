@@ -34,3 +34,4 @@ export class PortfolioGridComponent {
     this.router.navigateByUrl(`/portfolio/${id}`);
   }
 }
+

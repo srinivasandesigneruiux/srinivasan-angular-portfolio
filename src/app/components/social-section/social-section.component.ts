@@ -21,3 +21,4 @@ export class SocialSectionComponent {
     { cssClass: 'Behance', icon: 'fa-brands fa-square-behance', eyebrow: 'Get to Touch', title: 'Social Behance', href: '#' },
   ];
 }
+

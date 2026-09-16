@@ -15,3 +15,4 @@ export class HomeSectionComponent {
     this.scrollService.scrollTo('work');
   }
 }
+

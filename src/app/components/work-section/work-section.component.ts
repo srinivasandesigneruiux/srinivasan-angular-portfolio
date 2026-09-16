@@ -18,3 +18,4 @@ export class WorkSectionComponent {
     this.scrollService.scrollTo('portfolio');
   }
 }
+

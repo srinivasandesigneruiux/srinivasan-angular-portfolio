@@ -105,3 +105,4 @@ export class PortfolioCarouselComponent implements OnInit, OnDestroy {
     return event instanceof MouseEvent ? event.clientX : event.changedTouches[0].clientX;
   }
 }
+

@@ -142,77 +142,77 @@ export class ResumeSectionComponent
 
     {
       name: 'Figma',
-      src: 'assets/images/logo/figma.webp'
+      src: 'assets/images/logo/figma.png'
     },
 
     {
       name: 'Adobe XD',
-      src: 'assets/images/logo/xd.webp'
+      src: 'assets/images/logo/xd.png'
     },
 
     {
       name: 'Photoshop',
-      src: 'assets/images/logo/photoshop.webp'
+      src: 'assets/images/logo/photoshop.png'
     },
 
     {
       name: 'Lightroom',
-      src: 'assets/images/logo/lr.webp'
+      src: 'assets/images/logo/lr.png'
     },
 
     {
       name: 'Illustrator',
-      src: 'assets/images/logo/ai.webp'
+      src: 'assets/images/logo/ai.png'
     },
 
     {
       name: 'Angular',
-      src: 'assets/images/logo/angular.webp'
+      src: 'assets/images/logo/angular.png'
     },
 
     {
       name: 'HTML5',
-      src: 'assets/images/logo/html.webp'
+      src: 'assets/images/logo/html.png'
     },
 
     {
       name: 'CSS3',
-      src: 'assets/images/logo/css.webp'
+      src: 'assets/images/logo/css.png'
     },
 
     {
       name: 'React',
-      src: 'assets/images/logo/react.webp'
+      src: 'assets/images/logo/react.png'
     },
 
     {
       name: 'Bootstrap',
-      src: 'assets/images/logo/bootstrap.webp'
+      src: 'assets/images/logo/bootstrap.png'
     },
 
     {
       name: 'VS Code',
-      src: 'assets/images/logo/vs code.webp'
+      src: 'assets/images/logo/vs code.png'
     },
 
     {
       name: 'GitLab',
-      src: 'assets/images/logo/git lab.webp'
+      src: 'assets/images/logo/git lab.png'
     },
 
     {
       name: 'PowerPoint',
-      src: 'assets/images/logo/powerpoint.webp'
+      src: 'assets/images/logo/powerpoint.png'
     },
 
     {
       name: 'ChatGPT',
-      src: 'assets/images/logo/chat gpt.webp'
+      src: 'assets/images/logo/chat gpt.png'
     },
 
     {
       name: 'Claude',
-      src: 'assets/images/logo/claude.webp'
+      src: 'assets/images/logo/claude.png'
     }
 
   ];
@@ -857,3 +857,4 @@ private setupSkillsAnimation(): void {
   }
 
 }
+
