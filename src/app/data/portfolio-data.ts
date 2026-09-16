@@ -38,18 +38,18 @@ export const FILTERS: { label: string; value: string }[] = [
 ];
 
 export const CAROUSEL_CARDS: CarouselCard[] = [
-  { index: '01', image: 'assets/images/thumbline/upexcise.png', title: 'Project One', description: 'Government platform for managing excise operations, licenses, and related services digitally.', slug: 'upexcise' },
-  { index: '02', image: 'assets/images/thumbline/tnpds.png', title: 'Project Two', description: 'Digital public distribution system designed to manage ration cards, commodities, and citizen services.', slug: 'tnpds' },
-  { index: '03', image: 'assets/images/thumbline/primetrip.png', title: 'Project Three', description: 'Online bus ticket booking platform designed for a simple and seamless travel experience.', slug: 'primetrip' },
-  { index: '04', image: 'assets/images/thumbline/pharma.png', title: 'Project Four', description: 'Pharma inventory management system for efficiently managing medicines, stock, and business operations.', slug: 'pharma' },
-  { index: '05', image: 'assets/images/thumbline/pms.png', title: 'Project Five', description: 'Project management system for tracking projects, tasks, activities, and overall business progress.', slug: 'oasys-pms' },
-  { index: '06', image: 'assets/images/thumbline/uiux.png', title: 'Project Six', description: 'UI/UX designs and interactive prototypes created in Figma with a focus on usability and modern interfaces.', slug: 'figma-designs' },
-  { index: '07', image: 'assets/images/thumbline/ocx.png', title: 'Project Seven', description: 'Digital battery lifecycle platform for tracking battery information, history, and traceability.', slug: 'battery-passport' },
-  { index: '08', image: 'assets/images/thumbline/ocx-labs.png', title: 'Project Eight', description: 'Technology platform focused on innovative digital solutions and connected business operations.', slug: 'ocx-labs' },
-  { index: '09', image: 'assets/images/thumbline/grapic-design.png', title: 'Project Nine', description: 'Creative visual designs including branding, promotional materials, social media, and digital assets.', slug: 'graphic-design' },
-  { index: '10', image: 'assets/images/thumbline/emp-portal.png', title: 'Project Ten', description: 'Employee management portal for accessing workplace information, services, and resources.', slug: 'emp-portal' },
-  { index: '11', image: 'assets/images/thumbline/emp-portal-app.png', title: 'Project Eleven', description: 'Mobile application designed to provide employees with quick and convenient access to essential services.', slug: 'emp-portal-app' },
-  { index: '12', image: 'assets/images/thumbline/coptex.png', title: 'Project Twelve', description: 'Digital platform supporting textile and handloom operations, products, and customer services.', slug: 'coptex' },
+  { index: '01', image: 'assets/images/thumbline/upexcise.png', title: 'UP Excise', description: 'Government platform for managing excise operations, licenses, and related services digitally.', slug: 'upexcise' },
+  { index: '02', image: 'assets/images/thumbline/tnpds.png', title: 'TNPDS', description: 'Digital public distribution system designed to manage ration cards, commodities, and citizen services.', slug: 'tnpds' },
+  { index: '03', image: 'assets/images/thumbline/primetrip.png', title: 'Primetrip', description: 'Online bus ticket booking platform designed for a simple and seamless travel experience.', slug: 'primetrip' },
+  { index: '04', image: 'assets/images/thumbline/pharma.png', title: 'Oasys Pharma', description: 'Pharma inventory management system for efficiently managing medicines, stock, and business operations.', slug: 'pharma' },
+  { index: '05', image: 'assets/images/thumbline/pms.png', title: 'PMS', description: 'Project management system for tracking projects, tasks, activities, and overall business progress.', slug: 'oasys-pms' },
+  { index: '06', image: 'assets/images/thumbline/uiux.png', title: 'UI/UX', description: 'UI/UX designs and interactive prototypes created in Figma with a focus on usability and modern interfaces.', slug: 'figma-designs' },
+  { index: '07', image: 'assets/images/thumbline/ocx.png', title: 'OCX Battery Passport', description: 'Digital battery lifecycle platform for tracking battery information, history, and traceability.', slug: 'battery-passport' },
+  { index: '08', image: 'assets/images/thumbline/ocx-labs.png', title: 'OCX Labs', description: 'Technology platform focused on innovative digital solutions and connected business operations.', slug: 'ocx-labs' },
+  { index: '09', image: 'assets/images/thumbline/grapic-design.png', title: 'Graphic Design Works', description: 'Creative visual designs including branding, promotional materials, social media, and digital assets.', slug: 'graphic-design' },
+  { index: '10', image: 'assets/images/thumbline/emp-portal.png', title: 'Employee Portal', description: 'Employee management portal for accessing workplace information, services, and resources.', slug: 'emp-portal' },
+  { index: '11', image: 'assets/images/thumbline/emp-portal-app.png', title: 'Employee Portal App', description: 'Mobile application designed to provide employees with quick and convenient access to essential services.', slug: 'emp-portal-app' },
+  { index: '12', image: 'assets/images/thumbline/coptex.png', title: 'CoPtex', description: 'Digital platform supporting textile and handloom operations, products, and customer services.', slug: 'coptex' },
 ];
 
 export const PORTFOLIO_ITEMS: PortfolioItem[] = [
@@ -321,7 +321,13 @@ export const MODAL_GALLERIES: Record<string, ModalGallery> = {
   figma: {
     id: 'figma',
     title: 'Figma Works',
-    images: [P + 'figma/figma-ecomerce.jpg'],
+    images: [
+  P + 'figma/figma-ecomerce-1.webp',
+  P + 'figma/figma-ecomerce-2.webp',
+  P + 'figma/figma-ecomerce-3.webp',
+  P + 'figma/figma-ecomerce-4.webp',
+  P + 'figma/figma-ecomerce-5.webp'
+],
   },
 };
 
