@@ -142,77 +142,77 @@ export class ResumeSectionComponent
 
     {
       name: 'Figma',
-      src: 'assets/images/logo/figma.png'
+      src: 'assets/images/logo/figma.webp'
     },
 
     {
       name: 'Adobe XD',
-      src: 'assets/images/logo/xd.png'
+      src: 'assets/images/logo/xd.webp'
     },
 
     {
       name: 'Photoshop',
-      src: 'assets/images/logo/photoshop.png'
+      src: 'assets/images/logo/photoshop.webp'
     },
 
     {
       name: 'Lightroom',
-      src: 'assets/images/logo/lr.png'
+      src: 'assets/images/logo/lr.webp'
     },
 
     {
       name: 'Illustrator',
-      src: 'assets/images/logo/ai.png'
+      src: 'assets/images/logo/ai.webp'
     },
 
     {
       name: 'Angular',
-      src: 'assets/images/logo/angular.png'
+      src: 'assets/images/logo/angular.webp'
     },
 
     {
       name: 'HTML5',
-      src: 'assets/images/logo/html.png'
+      src: 'assets/images/logo/html.webp'
     },
 
     {
       name: 'CSS3',
-      src: 'assets/images/logo/css.png'
+      src: 'assets/images/logo/css.webp'
     },
 
     {
       name: 'React',
-      src: 'assets/images/logo/react.png'
+      src: 'assets/images/logo/react.webp'
     },
 
     {
       name: 'Bootstrap',
-      src: 'assets/images/logo/bootstrap.png'
+      src: 'assets/images/logo/bootstrap.webp'
     },
 
     {
       name: 'VS Code',
-      src: 'assets/images/logo/vs code.png'
+      src: 'assets/images/logo/vs code.webp'
     },
 
     {
       name: 'GitLab',
-      src: 'assets/images/logo/git lab.png'
+      src: 'assets/images/logo/git lab.webp'
     },
 
     {
       name: 'PowerPoint',
-      src: 'assets/images/logo/powerpoint.png'
+      src: 'assets/images/logo/powerpoint.webp'
     },
 
     {
       name: 'ChatGPT',
-      src: 'assets/images/logo/chat gpt.png'
+      src: 'assets/images/logo/chat gpt.webp'
     },
 
     {
       name: 'Claude',
-      src: 'assets/images/logo/claude.png'
+      src: 'assets/images/logo/claude.webp'
     }
 
   ];
